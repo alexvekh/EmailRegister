@@ -1,0 +1,33 @@
+<!DOCYTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+  <head>
+    <title>Create new user</title>
+  </head>
+  <body>
+    <h1>Create new user</h1>
+    
+    <fieldset>
+      <legend>Enter new user name and email</legend>
+        Name: <input type="text" th:field="${user.name}" /> <br />
+        Email: <input type="email" th:field="${user.email}"/><br />        
+    </fieldset>
+    
+    <form action="" method="post">
+      <input type="submit" value="Create User" />
+    </form>
+    
+
+
+
+<!-- Tryed to make delete button for each user record
+
+        <form th:action="@{/deleteUser/${user.id}}" th:object="${user}" method="post">
+                        <input type="hidden" th:field="${user}">Delete</input>
+                        <button type="delete" />
+    
+    <button type="delete" value="Delete User">Delete</button>
+-->
+    </div>
+    
+  </body> 
+</html>
