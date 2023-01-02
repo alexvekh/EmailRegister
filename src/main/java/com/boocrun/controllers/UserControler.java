@@ -15,6 +15,24 @@ public class UserControler {
   @Autowired
   private UserRepository userRepo;
   
+  @GetMapping("/new-user")
+  public String user (ModelMap model) {
+
+    User user = new User();
+   
+    model.put("user", user);
+    
+    return "new-user";
+    
+  }
+  
+  @PostMapping("/new-user")
+  public String newUser (User user) {
+    userRepo.save(user);
+    
+    return "redirect:/users";
+  }
+  
   @GetMapping("/users")
   public String usersView (ModelMap model) {
     Iterable<User> allUsers = userRepo.findAll();
@@ -27,15 +45,6 @@ public class UserControler {
     return "users";
     
   }
-  
-  @PostMapping("/new")
-  public String newUser (User user) {
-    userRepo.save(user);
-    
-    return "redirect:/users";
-  }
-  
-  
   
   
 }
