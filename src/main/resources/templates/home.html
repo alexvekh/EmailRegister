@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Spring Security Example</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     </head>
     <body>
-        <h1>Welcome!</h1>
+      <div class="container text-center my-5">  
+        <h1 class="fw-light">Welcome!</h1>
 
-        <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+        <p class="lead text-muted"> Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
         <br />
         <br />
         <div>
-        <a th:href="@{new-user}"><img th:src="@{images/new-user.png}" src="../images/new-user.png" alt="Add New User" style="width:193;height:196px;"></a>
-        <a th:href="@{users}"><img src="../images/users.png" alt="Users" style="width:193px;height:196px;"></a>
+        <a th:href="@{new-user}"><img th:src="@{images/new-user.png}" src="../static/images/new-user.png" alt="Add New User" style="width:193;height:196px;"></a>
+        <a th:href="@{users}"><img th:src="@{images/users.png}" src="../static/images/users.png" alt="Users" style="width:193px;height:196px;"></a>
         </div>
-        
+      </div>  
     </body>
 </html>
