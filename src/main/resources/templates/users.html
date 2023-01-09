@@ -1,4 +1,4 @@
-<!DOCYTYPE html>
+<form!DOCYTYPE html>
 <html xmlns:th="http://thymeleaf.org">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,18 +18,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="home.html">Home</a>
+          <a class="nav-link" aria-current="page" th:href="@{home}" href="home.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="new-user.html">Add user</a>
+          <a class="nav-link" th:href="@{new-user}" href="new-user.html">Add user</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" href="users.html">All users</a>
+          <a class="nav-link active" th:href="@{users}" href="users.html">All users</a>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="dashboard.html">Dashboard</a>
+          <a class="nav-link" th:href-"@{dashboard}" href="dashboard.html">Dashboard</a>
         </li>
       </ul>
 
@@ -38,8 +38,9 @@
 </nav>
   
   
-
-     <div th:each="user:${allUsers}" th:text="${user.email + ' -> ' + user.name}">
+  <div class="container my-5">
+     <div th:each="user:${allUsers}" th:text="${user.name + ' -> ' + user.email}">
+  
 
 
 <!--        <div th:each="user:${allUsers}" th:inline="text">[[${user.email + ' -> ' + user.password}]]> <a th:href="@{del/{user}(user=${luser})}">delete</a>-->
@@ -53,6 +54,6 @@
     <button type="delete" value="Delete User">Delete</button>
 -->
     </div>
-    
+  </div>  
   </body> 
 </html>

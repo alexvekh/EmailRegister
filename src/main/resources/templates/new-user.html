@@ -1,4 +1,4 @@
-<!DOCYTYPE html>
+<div!DOCYTYPE html>
 <html xmlns:th="http://thymeleaf.org">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,18 +20,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="home.html">Home</a>
+          <a class="nav-link" aria-current="page" th:href="@{home}" href="home.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="new-user.html">Add user</a>
+          <a class="nav-link active" th:href="@{new-user}" href="new-user.html">Add user</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="users.html">All users</a>
+          <a class="nav-link" th:href="@{users}" href="users.html">All users</a>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="dashboard.html">Dashboard</a>
+          <a class="nav-link" th:href-"@{dashboard}" href="dashboard.html">Dashboard</a>
         </li>
       </ul>
 
@@ -39,30 +39,20 @@
   </div>
 </nav>
     
-  
+  <div class="container my-5">
     <h1>Create new user</h1>
     
     <fieldset>
       <legend>Enter new user name and email</legend>
         Name: <input type="text" th:field="${user.name}" /> <br />
-        Email: <input type="email" th:field="${user.email}"/><br />        
-    </fieldset>
+        Email:&nbsp; <input type="email" th:field="${user.email}"/><br />        
+    </fieldset><br/>
     
     <form action="" method="post">
       <input type="submit" value="Create User" />
     </form>
-    
-
-
-
-<!-- Tryed to make delete button for each user record
-
-        <form th:action="@{/deleteUser/${user.id}}" th:object="${user}" method="post">
-                        <input type="hidden" th:field="${user}">Delete</input>
-                        <button type="delete" />
-    
-    <button type="delete" value="Delete User">Delete</button>
--->
+  </div>  
+  
     </div>
     
   </body> 
