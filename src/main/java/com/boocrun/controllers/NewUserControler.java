@@ -16,10 +16,12 @@ public class NewUserControler {
   private UserRepository userRepo;
   
   @GetMapping("/new-user")
-  public String user (ModelMap model) {
+  public String newUser (ModelMap model) {
 
     User user = new User();
-   
+    Iterable<User> allUsers = userRepo.findAll();
+    
+    model.put("allUsers", allUsers);
     model.put("user", user);
     
     return "new-user";
@@ -27,10 +29,10 @@ public class NewUserControler {
   }
   
   @PostMapping("/new-user")
-  public String newUser (User user) {
+  public String newUserPost (User user) {
     userRepo.save(user);
     
-    return "redirect:/home";
+    return "redirect:/";
   }
   /*
   @GetMapping("/users")

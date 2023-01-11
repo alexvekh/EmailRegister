@@ -41,15 +41,13 @@
     
   <div class="container my-5">
     <h1>Create new user</h1>
-    
+     <form action="" method="post">   
     <fieldset>
       <legend>Enter new user name and email</legend>
         Name: <input type="text" th:field="${user.name}" /> <br />
         Email:&nbsp; <input type="email" th:field="${user.email}"/><br />        
     </fieldset><br/>
-    
-    <form action="" method="post">
-      <input type="submit" value="Create User" />
+        <input type="submit" value="Create User" />
     </form>
   </div>  
   
