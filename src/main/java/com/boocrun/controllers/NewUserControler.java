@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.boocrun.domain.User;
 import com.boocrun.repositories.UserRepository;
@@ -13,26 +15,28 @@ import com.boocrun.repositories.UserRepository;
 public class NewUserControler {
   
   @Autowired
-  private UserRepository userRepo;
+  private UserRepository userRepo ;
   
-  @GetMapping("/new-user")
+  //@GetMapping("/new-user")
+  @RequestMapping(value="/new-user", method=RequestMethod.GET)
   public String newUser (ModelMap model) {
 
     User user = new User();
-    Iterable<User> allUsers = userRepo.findAll();
+    //Iterable<User> allUsers = userRepo.findAll();
     
-    model.put("allUsers", allUsers);
+    //model.put("allUsers", allUsers);
     model.put("user", user);
     
     return "new-user";
-    
   }
   
-  @PostMapping("/new-user")
+  //@PostMapping("/new-user")
+  @RequestMapping(value="/new-user", method=RequestMethod.POST)
   public String newUserPost (User user) {
     userRepo.save(user);
+    userRepo.flush();
     
-    return "redirect:/";
+    return "redirect:/confirm";
   }
   /*
   @GetMapping("/users")

@@ -15,8 +15,7 @@ public class User {
   private String name;
   
   @Id
-  //@GeneratedValue(strategy=GenerationType.AUTO)
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.IDENTITY) //AUTO IDENTITY SEQUENCE TABLE UUID
   public Long getId() {
     return id;
   }

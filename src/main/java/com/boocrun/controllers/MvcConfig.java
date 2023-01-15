@@ -1,7 +1,6 @@
 package com.boocrun.controllers;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -12,6 +11,7 @@ public class MvcConfig implements WebMvcConfigurer{
     registry.addViewController("/").setViewName("home");
     registry.addViewController("/dashboard").setViewName("dashboard");
     registry.addViewController("/login").setViewName("login");
+    registry.addViewController("/confirm").setViewName("confirm");
     //registry.addViewController("/home").setViewName("home");
     //registry.addViewController("/new-user").setViewName("new-user");
     //registry.addViewController("static/**").setViewName("static");
