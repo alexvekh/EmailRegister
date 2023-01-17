@@ -7,8 +7,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="users")
-public class User {
+//@Table(name="subscribers")
+public class Subscriber {
   
   private Long id;
   private String email;
@@ -35,4 +35,3 @@ public class User {
     this.name = name;
   }
 }
-

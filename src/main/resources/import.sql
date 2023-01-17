@@ -1,3 +1,3 @@
-insert into users (email, name) values ('alex@gmail.com', 'Alex');
-insert into users (email, name) values ('bobby@yahoo.com', 'Bob');
-insert into users (email, name) values ('ppol@gmail.com', 'Poul');
+insert into subscriber (email, name) values ('alex@gmail.com', 'Alex');
+insert into subscriber (email, name) values ('bobby@yahoo.com', 'Bob');
+insert into subscriber (email, name) values ('ppol@gmail.com', 'Poul');

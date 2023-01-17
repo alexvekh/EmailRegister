@@ -1,8 +1,9 @@
 <div!DOCYTYPE html>
 <html xmlns:th="http://thymeleaf.org">
   <head>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Create new user</title>
+    <title>Create new sub</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
@@ -23,11 +24,11 @@
           <a class="nav-link" aria-current="page" th:href="@{home}" href="home.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" th:href="@{new-user}" href="new-user.html">Add user</a>
+          <a class="nav-link active" th:href="@{newsub}" href="newsub.html">Add user</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" th:href="@{users}" href="users.html">All users</a>
+          <a class="nav-link" th:href="@{subs}" href="subs.html">All users</a>
         </li>
         
         <li class="nav-item">
@@ -40,16 +41,14 @@
 </nav>
     
   <div class="container my-5">
-    <h1>Create new user</h1>
-     <form action="/new-user" method="post">   
-    <fieldset>
-      <legend>Enter new user name and email</legend>
-        Name: <input type="text" th:field="${user.name}" /> <br />
-        Email:&nbsp; <input type="email" th:field="${user.email}"/><br />        
-    </fieldset><br/>
-        <input type="submit" value="Create User" />
+    <h1>Create new subscriber</h1>
+      <h5>Enter new subscriber name and email</h5>
+      <form action="/newsub" method="post">
+        Name: <input type="text" th:field="${subscriber.name}" /> <br /> 
+        Email:&nbsp; <input type="text" th:field="${subscriber.email}"/><br /></br> 
+        <input type="submit" value="Create Subscriber" />
     </form>
-  </div>  
+  </div>
   
     </div>
     

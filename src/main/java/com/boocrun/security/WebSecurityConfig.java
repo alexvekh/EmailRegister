@@ -16,29 +16,31 @@ import org.springframework.security.web.SecurityFilterChain;
 public class WebSecurityConfig {
 
   
-  @Bean
-  public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-  
-  /*  String[] staticResources  =  {
-        "/css/**",
-        "/images/**",
-        "/fonts/**",
-        "/scripts/**",
-    };*/
-    
-    http
-    .authorizeHttpRequests((requests) -> requests
-        .requestMatchers("/", "/home", "/new-user", "/confirm", "/images/**").permitAll()
-        .anyRequest().authenticated()
-      )
-      .formLogin((form) -> form
-        .loginPage("/login")
-        .permitAll()
-      )
-      .logout((logout) -> logout.permitAll());
+    @Bean
+    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-    return http.build();
-  }
+        /*  String[] staticResources  =  {
+              "/css/**",
+              "/images/**",
+              "/fonts/**",
+              "/scripts/**",
+          };*/
+    
+        http
+                .authorizeHttpRequests((requests) -> requests
+                                .requestMatchers("/", "/home", "/newsub", "/confirm", "/images/**").permitAll()
+                                .anyRequest().authenticated()
+                )
+                .formLogin((form) -> form
+                                .loginPage("/login")
+                                .permitAll()
+                )
+                .logout((logout) -> logout.permitAll());
+
+        return http.build();
+    }
+    
+    
   
   @Bean
   public UserDetailsService userDetailsService() {
@@ -46,7 +48,7 @@ public class WebSecurityConfig {
        User.withDefaultPasswordEncoder()
         .username("admin")
         .password("superuser")
-        .roles("USER")
+        .roles("ADMIN")
         .build();
 
     return new InMemoryUserDetailsManager(user);
