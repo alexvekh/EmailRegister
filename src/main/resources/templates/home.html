@@ -24,11 +24,11 @@
           <a class="nav-link active" th:href="@{/}" href="home.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" th:href="@{newsub}" href="newsub.html">Add user</a>
+          <a class="nav-link" th:href="@{newsub}" href="newsub.html">Add subscruber</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" th:href="@{subs}" href="subs.html">All users</a>
+          <a class="nav-link" th:href="@{subs}" href="subs.html">Subscrubers</a>
         </li>
         
         <li class="nav-item">
@@ -42,15 +42,18 @@
 
     
       <div class="container text-center my-5">  
-        <h1 class="fw-light">Welcome!</h1><br />
+        <h1 class="fw-light">Welcome to the demo!</h1><br />
 
-        <p class="lead text-muted"> This is demo Java Spring app. <br /> <br/>
-        Hibernite tehnology let anyone to <a th:href="@{/newsub}" href="newsub.html">add new user</a>  to Database. <br />
-        Spring security allows only <b>admin</b> with paswword: "superuser" to see and delete <a th:href="@{/subs}" href="subs.html">users</a>.</p><br/>
+        <p class="lead text-muted"> This is Java Spring app. <br /> <br/>
 
+          Hibernite tehnology let anyone to <a th:href="@{/newsub}" href="newsub.html">add new subscruber</a>  to Database without log in. <br />
+          Spring security allows only <b>admin</b> (with password: "superuser") to see and delete <a th:href="@{/subs}" href="subs.html">subscrubers</a>.<br />
+          Let us test it.
+          </p><br/>
+          
         <div>
-        <a th:href="@{newsub}" href="newsub.html" ><button class="btn btn-primary">Add User</button></a>&nbsp;&nbsp;&nbsp;
-        <a th:href="@{subs}" href="subs.html" ><button class="btn btn-warning">All Users</button></a>
+        <a th:href="@{newsub}" href="newsub.html" ><button class="btn btn-primary">Add Subscruber</button></a>&nbsp;&nbsp;&nbsp;
+        <a th:href="@{subs}" href="subs.html" ><button class="btn btn-warning">Subscrubers</button></a>
         </div>
       </div>  
     </body>
