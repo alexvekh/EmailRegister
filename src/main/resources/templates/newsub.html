@@ -21,7 +21,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" th:href="@{home}" href="home.html">Home</a>
+          <a class="nav-link" th:href="@{/}" href="home.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" th:href="@{newsub}" href="newsub.html">Add user</a>
@@ -32,7 +32,7 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" th:href-"@{dashboard}" href="dashboard.html">Dashboard</a>
+          <a class="nav-link" th:href="@{dashboard}" href="dashboard.html">Dashboard</a>
         </li>
       </ul>
 
@@ -43,10 +43,10 @@
   <div class="container my-5">
     <h1>Create new subscriber</h1>
       <h5>Enter new subscriber name and email</h5>
-      <form action="/newsub" method="post">
-        Name: <input type="text" th:field="${subscriber.name}" /> <br /> 
-        Email:&nbsp; <input type="text" th:field="${subscriber.email}"/><br /></br> 
-        <input type="submit" value="Create Subscriber" />
+      <form th:action="@{/newsub}" method="post">
+        Name: <input type="text" th:field="${subscriber.name}" th:name="_csrf" th:value="name" /> <br /> 
+        Email:&nbsp; <input type="text" th:field="${subscriber.email}" th:value="${subscriber.email}"/><br /></br> 
+        <input type="submit" th:value="Create" />
     </form>
   </div>
   

@@ -21,7 +21,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" th:href="@{home}" href="home.html">Home</a>
+          <a class="nav-link active" th:href="@{/}" href="home.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" th:href="@{newsub}" href="newsub.html">Add user</a>
@@ -32,7 +32,7 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" th:href-"@{dashboard}" href="dashboard.html">Dashboard</a>
+          <a class="nav-link" th:href="@{dashboard}" href="dashboard.html">Dashboard</a>
         </li>
       </ul>
 
@@ -45,12 +45,12 @@
         <h1 class="fw-light">Welcome!</h1><br />
 
         <p class="lead text-muted"> This is demo Java Spring app. <br /> <br/>
-        Hibernite tehnology let anyone to <a th:href="@{/new-user}" href="new-user.html">add new user</a>  to Database. <br />
-        Spring security allows only <b>admin</b> with paswword: "superuser" to see and delete <a th:href="@{/users}" href="users.html">users</a>.</p><br/>
+        Hibernite tehnology let anyone to <a th:href="@{/newsub}" href="newsub.html">add new user</a>  to Database. <br />
+        Spring security allows only <b>admin</b> with paswword: "superuser" to see and delete <a th:href="@{/subs}" href="subs.html">users</a>.</p><br/>
 
         <div>
-        <a th:href="@{new-user}" href="new-user.html" ><button class="btn btn-primary">Add User</button></a>&nbsp;&nbsp;&nbsp;
-        <a th:href="@{users}" href="users.html" ><button class="btn btn-warning">All Users</button></a>
+        <a th:href="@{newsub}" href="newsub.html" ><button class="btn btn-primary">Add User</button></a>&nbsp;&nbsp;&nbsp;
+        <a th:href="@{subs}" href="subs.html" ><button class="btn btn-warning">All Users</button></a>
         </div>
       </div>  
     </body>

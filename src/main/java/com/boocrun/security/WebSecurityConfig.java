@@ -2,6 +2,7 @@ package com.boocrun.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -13,7 +14,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig {
+public class WebSecurityConfig{
 
   
     @Bean
@@ -28,8 +29,11 @@ public class WebSecurityConfig {
     
         http
                 .authorizeHttpRequests((requests) -> requests
+                                //.requestMatchers(HttpMethod.POST, "/newsub").permitAll()
+                                //.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                                 .requestMatchers("/", "/home", "/newsub", "/confirm", "/images/**").permitAll()
                                 .anyRequest().authenticated()
+                                
                 )
                 .formLogin((form) -> form
                                 .loginPage("/login")
@@ -48,7 +52,7 @@ public class WebSecurityConfig {
        User.withDefaultPasswordEncoder()
         .username("admin")
         .password("superuser")
-        .roles("ADMIN")
+        .roles("USER", "ADMIN")
         .build();
 
     return new InMemoryUserDetailsManager(user);
